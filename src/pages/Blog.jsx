@@ -1,36 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, BookOpen, Clock } from 'lucide-react';
+import { posts } from '../data/posts';
 
 const Blog = () => {
-    // Premium hardcoded blog posts
-    const posts = [
-        {
-            title: "The Ultimate Guide to Local SEO in 2026",
-            excerpt: "Discover the top strategies for dominating Google Maps and ensuring your local business is found when it matters most.",
-            date: "Mar 15, 2026",
-            readTime: "8 min read",
-            category: "SEO",
-            img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=800"
-        },
-        {
-            title: "Why High-Intent Conversions Beat Broad Reach",
-            excerpt: "Stop paying for vanity metrics. We break down the mathematics behind high-intent targeted paid ads and why they win every time.",
-            date: "Feb 28, 2026",
-            readTime: "5 min read",
-            category: "PPC",
-            img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
-        },
-        {
-            title: "Building a Glassmorphism Brand Identity",
-            excerpt: "Visual trust matters. Learn how modern design methodologies translate directly to increased user confidence and lowered bounce rates.",
-            date: "Feb 10, 2026",
-            readTime: "12 min read",
-            category: "Design",
-            img: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=800"
-        }
-    ];
-
     return (
         <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900 text-left">
             {/* Minimal Nav */}
@@ -61,7 +34,7 @@ const Blog = () => {
             <section className="py-20 px-6 max-w-7xl mx-auto">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {posts.map((post, idx) => (
-                        <div key={idx} className="group cursor-pointer bg-white rounded-[2rem] border border-slate-200 overflow-hidden hover:shadow-2xl hover:border-blue-400 transition-all duration-300 flex flex-col hover:-translate-y-2">
+                        <Link to={`/blog/${post.slug}`} key={idx} className="group cursor-pointer bg-white rounded-[2rem] border border-slate-200 overflow-hidden hover:shadow-2xl hover:border-blue-400 transition-all duration-300 flex flex-col hover:-translate-y-2">
                             <div className="h-48 overflow-hidden relative">
                                 <img src={post.img} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-blue-600">
@@ -81,7 +54,7 @@ const Blog = () => {
                                     Read Article &rarr;
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </section>

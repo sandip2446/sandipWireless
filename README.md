@@ -1,16 +1,47 @@
-# React + Vite
+# Sandip Wireless | Digital Growth Agency
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the full source code for the Sandip Wireless modern marketing portfolio. 
+The application is structured as a blazing-fast React Application heavily optimized for Google metrics, featuring dynamic Glassmorphism UI processing, autonomous conversational AI routing, and sub-domain Firebase Hosting integrated with Web3Forms real-time email triggers.
 
-Currently, two official plugins are available:
+**Tech Stack:** React, Vite, Tailwind v4, React-Router-Dom, Firebase Hosting, Lucide Icons
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 The Daily Development Workflow
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Any time you make a change to the codebase (such as publishing a new blog article, modifying the ChatBud's intelligence database, or tweaking the primary CSS colors), you need to back up your changes to GitHub and push them to the live website.
 
-## Expanding the ESLint configuration
+From your application terminal, follow these steps in exact order:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Back Up Your Code (GitHub)
+
+**Stage all modified files for backup:**
+```bash
+git add .
+```
+
+**Package the files with a descriptive note:**
+```bash
+git commit -m "Describe the exact feature you just built or color you just changed"
+```
+
+**Securely push to GitHub:**
+```bash
+git push
+```
+
+---
+
+### 2. Deploy to the Live Public Internet (Firebase)
+
+Backing up the code to GitHub does *not* automatically update the public website URL. To push your fresh code directly to users at `sandipwireless.web.app`, run these commands:
+
+**Compress all React files into a high-speed production `/dist` folder:**
+```bash
+npm run build
+```
+
+**Upload the raw `/dist` bundle to Google's hosting infrastructure:**
+```bash
+npx firebase-tools deploy --only hosting
+```
