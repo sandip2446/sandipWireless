@@ -45,3 +45,4 @@ npm run build
 ```bash
 npx firebase-tools deploy --only hosting
 ```
+# sandipWireless
